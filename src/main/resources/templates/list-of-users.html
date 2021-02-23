@@ -1,0 +1,41 @@
+
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+
+    <title>Connect</title>
+</head>
+
+<body>
+
+
+<th:block th:each="connection: ${users}">
+    <p th:text="${connection.user.email}" > </p>
+
+    <div th:if="${connection.isConnection}"><p>Connected</p></div>
+    <div th:unless="${connection.isConnection}">
+
+        <div th:if="${connection.isRequested}"><p>Request Sent</p></div>
+
+        <div th:unless="${connection.isRequested}">
+
+            <div th:if="${connection.hasRequestCame}"><p>Request Arrived..Check your request panel</p></div>
+
+            <div th:unless="${connection.hasRequestCame}">
+            <p><a th:href="@{/user/request/{email}(email = ${connection.user.email})}">Connect</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+<!--    <a th:href="@{/user/request/{email}(email = ${connection.user.email})}">Connect</a>-->
+
+</th:block>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+
+    <title>Connect</title>
+</head>
+
+<body>
+
+
+<th:block th:each="connection: ${connectionList}">
+    Email:-<p th:text="${connection.email}">Email</p>
+    <p><a th:href="@{/user/deleteConnection/{email}(email = ${connection.email})}">Delete Connection</a></p>
+</th:block>
+
+<a href="/logout">Logout</a>
+
+</body>
+
+</html>

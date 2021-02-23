@@ -1,0 +1,25 @@
+
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+
+    <title>Connect</title>
+</head>
+
+<body>
+
+Email:-<p th:text="${email}">Email</p>
+
+Password:-<p th:text="${password}">Password</p>
+
+Handle:-<p th:text="${handleName}">Handle</p>
+
+<br>
+<a href="/editInfo">Edit your information</a>
+
+<a href="/logout">Logout</a>
+
+</body>
+
+</html>

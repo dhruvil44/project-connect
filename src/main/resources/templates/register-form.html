@@ -1,0 +1,27 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Connect</title>
+</head>
+
+<body>
+
+<form action="#" th:action="@{/processForm}" method="post" th:object="${user}">
+
+    <label>Email:</label>
+    <input type="text" th:field="*{email}" /><br/>
+
+    <label>UserName:</label>
+    <input type="text" th:field="*{username}" /><br/>
+
+    <label>Password:</label>
+    <input type="text" th:field="*{password}" /><br/>
+
+    <button type="submit">Register</button>
+</form>
+
+</body>
+
+</html>

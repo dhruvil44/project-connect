@@ -1,0 +1,34 @@
+
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+
+    <title>Connect</title>
+</head>
+
+<body>
+<!--This is to print name of the logged in user-->
+<!--<div sec:authorize="isAuthenticated()">-->
+<!--    Welcome <span sec:authentication="name"></span></div>-->
+
+Welcome <span sec:authentication="principal.handleUserName">Fullname</span>
+<br>
+<br>
+<a href="/user/accountdetails">Account Details</a>
+<br>
+<br>
+<a href="/user/getConnections">Connections</a>
+<br>
+<br>
+<a href="/user/showRequests">Requests</a>
+<br>
+<br>
+<a href="/user/showListOfUsers">See the List</a>
+<br>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+
+</html>

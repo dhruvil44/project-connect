@@ -1,0 +1,24 @@
+
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+
+    <title>Connect</title>
+</head>
+
+<body>
+
+
+<th:block th:each="request: ${requests}">
+    <p th:text="${request.email_whosent}" > </p>
+    <a th:href="@{/user/acceptRequest/{email}(email = ${request.email_whosent})}">Accept</a>
+    <a th:href="@{/user/declineRequest/{email}(email = ${request.email_whosent})}">Decline</a>
+
+</th:block>
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+
+</html>
